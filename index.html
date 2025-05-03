@@ -40,6 +40,16 @@
     .date, .location {
       font-size: 18px;
     }
+    .countdown {
+      font-size: 20px;
+      font-weight: bold;
+      color: #d35400;
+      margin: 20px 0;
+    }
+    .time-detail {
+      font-size: 16px;
+      color: #555;
+    }
     .footer {
       margin-top: 40px;
       font-size: 14px;
@@ -68,6 +78,15 @@
       <strong>Ấp Mỹ Quí, xã Hiệp Mỹ Tây, huyện Cầu Ngang, tỉnh Trà Vinh</strong>
     </div>
 
+    <div class="section time-detail">
+      - <strong>Làm lễ:</strong> từ 9h đến 10h sáng<br/>
+      - <strong>Đãi tiệc:</strong> từ 11h đến 13h tại tư gia
+    </div>
+
+    <div class="countdown" id="countdown">
+      Đếm ngược đến giờ làm lễ...
+    </div>
+
     <div class="section">
       Rất mong sự hiện diện của Quý vị để buổi lễ thêm phần trang trọng!
     </div>
@@ -76,5 +95,30 @@
       Thiệp cưới online bởi Hữu Đông
     </div>
   </div>
+
+  <script>
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("2025-06-16T09:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownEl.innerHTML = "Buổi lễ đã bắt đầu!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
