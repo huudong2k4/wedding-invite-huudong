@@ -1,72 +1,80 @@
-<!DOCTYPE html><html lang="vi">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thiệp cưới Hữu Đông & Quỳnh Như</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(#fff, #fce4ec);
+      background: linear-gradient(to bottom, #fff5f8, #ffe3e3);
       color: #333;
+      text-align: center;
     }
-    header {
-      background: url('https://images.unsplash.com/photo-1525161236253-55c0c5efbfc9?fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 0 0 5px black;
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px 20px;
     }
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 4em;
+      font-size: 48px;
+      color: #c0392b;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .names {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
     }
     .section {
-      padding: 40px 20px;
-      text-align: center;
+      margin-bottom: 30px;
     }
-    .countdown {
-      font-size: 2em;
-      color: #c2185b;
+    .date, .location {
+      font-size: 18px;
     }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Hữu Đông & Quỳnh Như</h1>
-    <p>Trân trọng kính mời bạn đến dự lễ cưới của chúng tôi</p>
-  </header>  <section class="section">
-    <h2>Thông tin lễ cưới</h2>
-    <p><strong>Chú rể:</strong> Nguyễn Hữu Đông (Út nam)</p>
-    <p><strong>Cô dâu:</strong> Trần Quỳnh Như (Trưởng nữ)</p>
-    <p><strong>Thời gian:</strong> 16/06/2025 (21/05 âm lịch)</p>
-    <p><strong>Địa điểm:</strong> Ấp Mỹ Quí, xã Hiệp Mỹ Tây, huyện Cầu Ngang, tỉnh Trà Vinh</p>
-  </section>  <section class="section">
-    <h2>Đếm ngược đến ngày cưới</h2>
-    <div class="countdown" id="countdown"></div>
-  </section>  <section class="section">
-    <h2>Đường đi</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.8021921185036!2d106.358!3d9.757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSOG7jWMgbcOibg!5e0!3m2!1svi!2s!4v0000000000000"></iframe>
-  </section>  <script>
-    const countdown = document.getElementById('countdown');
-    const weddingDate = new Date('2025-06-16T00:00:00').getTime();
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdown.innerHTML = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
-    }, 1000);
-  </script></body>
-</
+  <div class="container">
+    <h1>Thiệp Mời</h1>
+    <h2>Trân trọng kính mời</h2>
+
+    <div class="section names">
+      Nguyễn Hữu Đông <br/>
+      &<br/>
+      Trần Quỳnh Như
+    </div>
+
+    <div class="section date">
+      Vào ngày <strong>16/06/2025</strong> <br/>
+      (nhằm ngày <strong>21/05 âm lịch</strong>)
+    </div>
+
+    <div class="section location">
+      Tại: <br/>
+      <strong>Ấp Mỹ Quí, xã Hiệp Mỹ Tây, huyện Cầu Ngang, tỉnh Trà Vinh</strong>
+    </div>
+
+    <div class="section">
+      Rất mong sự hiện diện của Quý vị để buổi lễ thêm phần trang trọng!
+    </div>
+
+    <div class="footer">
+      Thiệp cưới online bởi Hữu Đông
+    </div>
+  </div>
+</body>
+</html>
