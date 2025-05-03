@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f0f8ff; /* Màu nền xanh dương nhạt */
+      background: #f0f8ff;
       color: #333;
       overflow-x: hidden;
     }
@@ -20,13 +20,13 @@
       padding: 40px 20px;
       text-align: center;
       background-color: #fff;
-      border-radius: 15px;
+      border-radius: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 58px;
-      color: #2980b9; /* Xanh dương */
+      color: #2980b9;
       margin-bottom: 20px;
     }
     h2 {
@@ -40,24 +40,26 @@
       color: #2980b9;
       margin: 20px 0;
     }
+    .invite {
+      font-size: 24px;
+      color: #555;
+      margin-bottom: 40px;
+    }
     .section {
       margin-bottom: 30px;
     }
-    .date, .time-detail {
+    .date, .time-detail, .countdown {
       font-size: 20px;
       color: #555;
       line-height: 1.6;
     }
-    .location {
-      font-size: 20px;
-      color: #555;
-      line-height: 1.6;
-      display: none; /* Ẩn địa điểm */
+    .time-detail {
+      margin-bottom: 20px;
     }
     .countdown {
       font-size: 24px;
       font-weight: bold;
-      color: #e74c3c; /* Màu cam */
+      color: #e74c3c;
       margin: 20px 0;
     }
     .footer {
@@ -86,63 +88,41 @@
         opacity: 0;
       }
     }
-    /* Tạo hiệu ứng hover */
-    .section:hover {
-      background-color: #f0f8ff;
-      transition: background-color 0.3s;
-      border-radius: 8px;
-    }
-    /* Bố cục đẹp hơn */
+    /* Bo góc */
     .container {
-      max-width: 800px;
-      padding: 40px 30px;
-      border-radius: 20px;
+      border-radius: 30px;
     }
-    .names {
-      color: #2980b9;
-      font-size: 38px;
-      margin: 30px 0;
-    }
-    .countdown {
-      color: #e74c3c;
-      font-size: 28px;
-      font-weight: bold;
-      margin: 30px 0;
+    .section {
+      border-radius: 15px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Thiệp Mời</h1>
-    <h2>Trân trọng kính mời</h2>
-
-    <div class="section names">
+    <div class="names">
       Nguyễn Hữu Đông <br/>
       &<br/>
       Trần Quỳnh Như
     </div>
 
-    <div class="section date">
-      Ngày <strong>16/06/2025</strong> <br/>
-      (nhằm ngày <strong>21/05 âm lịch</strong>)
+    <div class="invite">
+      Trân trọng kính mời <br/>
+      ANH/CHỊ/CÔ/CHÚ/CẬU/MƠ...
     </div>
 
-    <div class="section location" id="location">
-      Tại: <br/>
-      <strong>Ấp Mỹ Quí, xã Hiệp Mỹ Tây, huyện Cầu Ngang, tỉnh Trà Vinh</strong>
+    <div class="section date">
+      Ngày dương lịch: <strong>16/06/2025</strong> <br/>
+      Ngày âm lịch: <strong>21/05/âm lịch</strong>
     </div>
 
     <div class="section time-detail">
-      - <strong>Làm lễ:</strong> từ 9h đến 10h sáng<br/>
-      - <strong>Đãi tiệc:</strong> từ 11h đến 13h
+      - <strong>Lễ cưới:</strong> 9h00 sáng<br/>
+      - <strong>Đãi tiệc:</strong> 11h00 đến 13h00
     </div>
 
     <div class="countdown" id="countdown">
       Đếm ngược đến giờ làm lễ...
-    </div>
-
-    <div class="section">
-      Rất mong sự hiện diện của Quý vị để buổi lễ thêm phần trang trọng!
     </div>
 
     <div class="footer">
@@ -189,15 +169,6 @@
       }, 8000);
     }
     setInterval(createHeart, 300);
-
-    // Hiển thị địa điểm khi người dùng cuộn xuống
-    window.addEventListener('scroll', function () {
-      const location = document.getElementById('location');
-      const rect = location.getBoundingClientRect();
-      if (rect.top <= window.innerHeight) {
-        location.style.display = 'block';
-      }
-    });
   </script>
 </body>
 </html>
