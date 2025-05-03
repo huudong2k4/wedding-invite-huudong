@@ -3,65 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiệp cưới Hữu Đông & Quỳnh Như</title>
+  <title>Thiệp Cưới Hữu Đông & Quỳnh Như</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom right, #fff1f5, #ffe0e9);
+      background: #f8f9fa;
       color: #333;
       overflow-x: hidden;
     }
     .container {
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
       padding: 40px 20px;
       text-align: center;
-      position: relative;
-      z-index: 1;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 52px;
-      color: #c0392b;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 22px;
-      color: #555;
+      font-size: 58px;
+      color: #e74c3c;
       margin-bottom: 20px;
     }
+    h2 {
+      font-size: 26px;
+      color: #555;
+      margin-bottom: 30px;
+    }
     .names {
-      font-size: 30px;
+      font-size: 32px;
       font-weight: bold;
-      margin: 30px 0 20px;
+      color: #2c3e50;
+      margin: 20px 0;
     }
     .section {
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
-    .date, .location, .time-detail {
-      font-size: 18px;
-      color: #444;
+    .date, .time-detail {
+      font-size: 20px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .location {
+      font-size: 20px;
+      color: #555;
+      line-height: 1.6;
+      display: none; /* Ẩn địa điểm */
     }
     .countdown {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       color: #d35400;
       margin: 20px 0;
     }
     .footer {
       margin-top: 50px;
-      font-size: 14px;
+      font-size: 16px;
       color: #888;
     }
     /* Hoa rơi */
     .petal {
       position: fixed;
       top: -50px;
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
       background-image: url('https://cdn-icons-png.flaticon.com/512/3461/3461810.png');
       background-size: cover;
       animation: fall linear infinite;
@@ -76,6 +85,12 @@
         transform: translateY(100vh) rotate(360deg);
         opacity: 0;
       }
+    }
+    /* Tạo các hiệu ứng hover */
+    .section:hover {
+      background-color: #f0f0f0;
+      transition: background-color 0.3s;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -95,14 +110,14 @@
       (nhằm ngày <strong>21/05 âm lịch</strong>)
     </div>
 
-    <div class="section location">
+    <div class="section location" id="location">
       Tại: <br/>
       <strong>Ấp Mỹ Quí, xã Hiệp Mỹ Tây, huyện Cầu Ngang, tỉnh Trà Vinh</strong>
     </div>
 
     <div class="section time-detail">
       - <strong>Làm lễ:</strong> từ 9h đến 10h sáng<br/>
-      - <strong>Đãi tiệc:</strong> từ 11h đến 13h tại tư gia
+      - <strong>Đãi tiệc:</strong> từ 11h đến 13h
     </div>
 
     <div class="countdown" id="countdown">
@@ -157,6 +172,15 @@
       }, 8000);
     }
     setInterval(createPetal, 300);
+
+    // Hiển thị địa điểm khi người dùng cuộn xuống
+    window.addEventListener('scroll', function () {
+      const location = document.getElementById('location');
+      const rect = location.getBoundingClientRect();
+      if (rect.top <= window.innerHeight) {
+        location.style.display = 'block';
+      }
+    });
   </script>
 </body>
 </html>
