@@ -13,12 +13,22 @@
       color: #4a3c31;
     }
     .card {
-  animation: fadeIn 1.8s ease-in-out;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-      }
+      max-width: 650px;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .title {
       font-family: 'Great Vibes', cursive;
       font-size: 42px;
@@ -138,6 +148,20 @@
     }
 
     setInterval(updateCountdown, 1000);
+    <div class="container">
+    <div class="title">Kính mời:...........</div>
+    <div class="message">
+        Chúng tôi, <strong>[Hữu Đông]</strong> và <strong>[Quỳnh Như]</strong>,  
+        trân trọng kính mời Quý vị đến tham dự lễ cưới của chúng tôi vào ngày  
+        <strong>[Ngày, tháng, năm]</strong> tại <strong>[Địa điểm]</strong>.
+    </div>
+    <div class="footer">
+        Sự hiện diện của Quý vị sẽ là niềm vinh hạnh và hạnh phúc lớn lao đối với chúng tôi.
+    </div>
+</div>
+
+</body>
+</html
   </script>
 </body>
 </html>
