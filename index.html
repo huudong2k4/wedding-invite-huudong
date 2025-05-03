@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thiệp Cưới</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thiệp Tân Hôn</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background: url('https://i.imgur.com/3ZQ3Z6T.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
       color: #4a3c31;
     }
     .card {
@@ -21,29 +20,22 @@
       border-radius: 24px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
       text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
     .title {
       font-family: 'Great Vibes', cursive;
       font-size: 42px;
       color: #a6794f;
       margin-bottom: 10px;
+      animation: fadeInDown 2s ease-out;
     }
     .names {
       font-size: 30px;
       font-weight: bold;
       margin: 10px 0;
-      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: fadeIn 3s ease-in;
     }
     .info {
       font-size: 18px;
@@ -64,15 +56,42 @@
       background: #ccc;
       margin: 20px 0;
     }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .music-link {
+      margin-top: 20px;
+    }
+    .music-link a {
+      color: #d81b60;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="title">Tân Hôn</div>
     <div class="names">
-      Nguyễn Hữu Đông<br>
-      <span style="font-family: 'Great Vibes', cursive; font-size: 36px; color: #a6794f;">&</span><br>
-      Trần Quỳnh Như
+      <span>Nguyễn Hữu Đông</span>
+      <span>&</span>
+      <span>Trần Quỳnh Như</span>
     </div>
     <div class="divider"></div>
 
@@ -88,7 +107,17 @@
     <div class="divider"></div>
 
     <div class="countdown" id="countdown"></div>
+
+    <div class="music-link">
+      <a href="https://zingmp3.vn/bai-hat/Dam-Cuoi-Nha---Remix-/ZZ97Z8WB.html" target="_blank">
+        Nghe nhạc: Đám Cưới Nhà (Remix) - Zing MP3
+      </a>
+    </div>
   </div>
+
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9b3c5e7b5f.mp3" type="audio/mpeg">
+  </audio>
 
   <script>
     const weddingDate = new Date('2025-06-16T09:00:00');
