@@ -13,14 +13,12 @@
       color: #4a3c31;
     }
     .card {
-      max-width: 650px;
-      margin: 60px auto;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
-      border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
+  animation: fadeIn 1.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+      }
     .title {
       font-family: 'Great Vibes', cursive;
       font-size: 42px;
@@ -109,8 +107,7 @@
     <div class="countdown" id="countdown"></div>
 
     <div class="music-link">
-      <a href="https://zingmp3.vn/bai-hat/Dam-Cuoi-Nha---Remix-/ZZ97Z8WB.html" target="_blank">
-        Nghe nhạc: Đám Cưới Nhà (Remix) - Zing MP3
+      <a href="
       </a>
     </div>
   </div>
